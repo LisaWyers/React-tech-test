@@ -10,4 +10,10 @@ describe('SearchResults', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('renders the image to the screen', () => {
+    render(<SearchResults results={results} />);
+
+    expect(screen.getAllByTestId('search-result-image')).toBeTruthy();
+  });
 });

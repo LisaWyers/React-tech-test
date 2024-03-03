@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import "../styles/app.css";
-import Search from "./Search";
-import SearchResults from "./SearchResults";
+import { useState } from 'react';
+import '../styles/app.css';
+import Search from './Search';
+import SearchResults from './SearchResults';
 
-function App() {
-  const [searchResults, setSearchResults] = useState();
+const App = () => {
+  const [searchResults, setSearchResults] = useState([]);
+
   return (
-    <div className="app">
-      <img
-        className="nasa-logo"
-        src="https://cdn.cnn.com/cnnnext/dam/assets/200424060716-nasa-worm-logo.jpg"
-        alt="nasaLogo"
-      />
+    <div className='app'>
+      <img className='logo' src='https://cdn.cnn.com/cnnnext/dam/assets/200424060716-nasa-worm-logo.jpg' alt='NASA logo' />
       <Search setSearchResults={setSearchResults} />
-      <SearchResults />
+      <div className='search-results'>
+        <SearchResults results={searchResults} />
+      </div>
     </div>
   );
 }
+
 export default App;

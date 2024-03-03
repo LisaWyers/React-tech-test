@@ -6,8 +6,8 @@ exports[`App renders correctly 1`] = `
     class="app"
   >
     <img
-      alt="nasaLogo"
-      class="nasa-logo"
+      alt="NASA logo"
+      class="logo"
       src="https://cdn.cnn.com/cnnnext/dam/assets/200424060716-nasa-worm-logo.jpg"
     />
     <form
@@ -18,12 +18,19 @@ exports[`App renders correctly 1`] = `
         type="text"
       />
       <button
-        class="search-btn"
+        class="search-button"
         type="submit"
       >
-        Go!
+        Search
       </button>
     </form>
+    <div
+      class="search-results"
+    >
+      <p>
+        No results
+      </p>
+    </div>
   </div>
 </DocumentFragment>
 `;

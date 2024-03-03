@@ -1,11 +1,10 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import App from "../components/App";
+import { render } from '@testing-library/react';
+import App from '../components/App';
 
-describe("App", () => {
-  const { asFragment } = render(<App />);
+describe('App', () => {
+  it('renders correctly', () => {
+    const { asFragment } = render(<App />);
 
-  it("renders correctly", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });

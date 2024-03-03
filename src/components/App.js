@@ -10,9 +10,9 @@ const App = () => {
         src="https://cdn.cnn.com/cnnnext/dam/assets/200424060716-nasa-worm-logo.jpg"
         alt="nasaLogo"
       />
-      <Search />
+      <Search setSearchResults={setSearchResults} />
     </div>
   );
-}
+};
 
 export default App;

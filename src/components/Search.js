@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import "../styles/search.css";
+import { render, screen } from '@testing-library/react';
+import Search from '../components/Search';
 
-const Search = () => {
-  const [value, setValue] = useState();
+describe('Search', () => {
+  const validProps = {
+    setSearchResults: jest.fn()
+  }
 
-  return (
-    <>
-      <form className="search-form">
-        <input
-          className="search-input"
-          type="text"
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button className="search-btn" type="submit">
-          Go!
-        </button>      
-      </form>
-    </>
-  );
-};
+  it('renders correctly', () => {
+    const { asFragment } = render(<Search setSearchResults={validProps}/>);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('renders a search button', () => {
+    render(<Search setSearchResults={validProps} />);
+
+    expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toHaveTextContent('Search');
+  });
+});
 
 export default Search;
